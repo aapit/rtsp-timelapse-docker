@@ -1,0 +1,9 @@
+services:
+  app:
+    container_name: timelapse-app
+    build: ./
+    restart: always
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+      - ./media:/var/webcam/grow3
