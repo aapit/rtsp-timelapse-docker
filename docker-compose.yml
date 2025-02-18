@@ -1,7 +1,7 @@
 services:
   app:
     container_name: timelapse-app
-    build: ./
+    image: aapit/rtsp-timelapse
     restart: always
     volumes:
       - /etc/localtime:/etc/localtime:ro
