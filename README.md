@@ -1,6 +1,6 @@
 # Timelapse RTSP Docker setup
 These are scripts to create timelapse videos from RTSP feeds.
-You can run this container setup and trigger a cronjob externally to periodically take snapshots.
+You can run this minimal Alpine-based container setup and trigger a cronjob externally to periodically take snapshots.
 
 A second script uses ffmpeg to convert those snapshots to timelapse videos.
 
