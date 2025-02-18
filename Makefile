@@ -4,3 +4,6 @@ default:
 
 upload:
 	rsync -u -avz --progress * nasq:/share/Docker/rtsp-timelapse/ --exclude LICENSE
+
+snap:
+	./snap.sh
