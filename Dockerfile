@@ -14,4 +14,3 @@ install -m 754 -o root -g _webcam render.sh /usr/local/webcam/ && \
 rm -rf /tmp/rtsp-timelapse/
 WORKDIR /usr/local/webcam/
 RUN mkdir -p /var/webcam/grow3 && touch /var/webcam/grow3/timelapse.hevc
-COPY cameras.txt /usr/local/webcam/

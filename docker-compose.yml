@@ -7,3 +7,4 @@ services:
       - /etc/localtime:/etc/localtime:ro
       - /etc/timezone:/etc/timezone:ro
       - ./media:/var/webcam/grow3
+      - ./cameras.txt:/usr/local/webcam/cameras.txt
