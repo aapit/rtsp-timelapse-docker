@@ -1,4 +1,4 @@
 #!/usr/bin/env sh
 cd /share/CACHEDEV1_DATA/Docker/rtsp-timelapse && \
-docker compose exec app /usr/local/webcam/snap.sh && \
+/share/CACHEDEV1_DATA/.qpkg/container-station/bin/docker compose run --rm app bash -c "sed -i '32 s/\&//' snap.sh && chmod +x snap.sh && ./snap.sh" && \
 cd -
