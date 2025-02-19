@@ -9,4 +9,4 @@ snap:
 	./snap.sh
 
 leech_media:
-	rsync -avz -u nasq:/share/CACHEDEV1_DATA/Docker/rtsp-timelapse/media/img/ media/img/ --progress
+	rsync -avz -u --remove-source-files nasq:/share/CACHEDEV1_DATA/Docker/rtsp-timelapse/media/img/*.jpg media/img/ --progress
