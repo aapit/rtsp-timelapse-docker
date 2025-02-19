@@ -13,3 +13,7 @@ It uses `cesiumcz`'s repo for conversion scripts.
 cp cameras.example.txt cameras.txt
 ```
 3. Now insert the camera's RTSP URI into the new `cameras.txt` file.
+- field 1: camera name
+- field 2: jpg quality (1 is best, 31 is worst)
+- field 3: Constant Rate Factor (CRF), default 28
+ field 4: camera rtsp uri
