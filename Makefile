@@ -13,4 +13,4 @@ leech_media:
 	rsync -avz -u --remove-source-files nasq:/share/CACHEDEV1_DATA/Docker/rtsp-timelapse/media/img/*.jpg media/img/ --progress
 
 timelapse:
-	ffmpeg -y -framerate 24 -pattern_type glob -i 'media/img/*.jpg' -c:v libx265 -pix_fmt yuv444p ../timelapse.mp4
+	ffmpeg -y -framerate 24 -pattern_type glob -i 'media/img/*.jpg' -c:v libx265 -pix_fmt yuvj420p ../timelapse.mp4
