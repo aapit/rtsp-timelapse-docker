@@ -19,6 +19,10 @@ Create timelapse from stills:
 ``` sh
 make timelapse
 ```
+Or all three actions combined:
+``` sh
+make refresh_timelapse
+```
 
 ## Instructions for cron daemon RTSP feed snaps
 ### 1. Adjust cron script
