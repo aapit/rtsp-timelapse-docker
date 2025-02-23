@@ -17,6 +17,6 @@ timelapse:
 
 remove_blackish:
 	@echo "Checking for blackish images..."
-	@sh -c 'for f in media/img/*.jpg; do [ "$$(./image-is-blackish.py $$f)" = "1" ] && (rm -f $$f && echo "removed $$f"); done; true'
+	@sh -c 'counter=0; total=$$(/bin/ls media/img/*.jpg|wc -l|xargs); for f in media/img/*.jpg; do counter=`expr $$counter + 1`; echo "Checking $$counter of $$total"; [ "$$(./image-is-blackish.py $$f)" = "1" ] && (rm -f $$f && echo "removed $$f"); done; true'
 
 refresh_timelapse: leech_media remove_blackish timelapse
