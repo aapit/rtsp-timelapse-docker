@@ -3,25 +3,29 @@
 import sys
 from PIL import Image
 
+# Percentage of blackish pixels required for the image to be considered blackish
+threshold_pixels = 90
+# Max percentage of pixel brightness to consider it blackish
+dark_is_black_threshold = 20
+
 if len(sys.argv) < 2:
     raise TypeError('No file input given. Please provide file path.')
 
 def is_blackish(image_path):
+    return how_blackish(image_path) > (threshold_pixels / 100)
+
+def how_blackish(image_path):
     image = Image.open(image_path)
     bands = image.getbands()
     if image.mode != 'RGB':
         raise TypeError('No RGB image')
 
-    r, g, b = image.split()
-    if not (r.getextrema() == g.getextrema() == b.getextrema()):
-        return 0
-
     # Check if the image has very low color saturation
     hsv = image.convert('HSV')
     h, s, v = hsv.split()
-    sat_pixels = s.getdata()
-    num_low_sat_pixels = sum(1 for pixel in sat_pixels if pixel < 32)
+    v_pixels = v.getdata()
+    num_dark_pixels = sum(1 for pixel in v_pixels if pixel < dark_is_black_threshold)
 
-    return int((num_low_sat_pixels / len(sat_pixels) > .92))
+    return (num_dark_pixels / len(v_pixels))
 
-print(is_blackish(sys.argv[1]))
+print(1 if is_blackish(sys.argv[1]) else 0)
