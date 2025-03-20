@@ -3,7 +3,7 @@ default:
 	@echo "make upload"
 
 upload:
-	rsync -u -avz --progress * nasq:/share/Docker/rtsp-timelapse/ --exclude LICENSE --exclude media/img/
+	rsync -u -avz --progress * nasq:/share/Docker/rtsp-timelapse/ --exclude LICENSE --exclude media/ --exclude venv/
 	ssh nasq sudo chmod +x /share/Docker/rtsp-timelapse/cron-run.sh
 
 snap:
