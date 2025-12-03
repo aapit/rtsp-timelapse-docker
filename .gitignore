@@ -1,2 +1,3 @@
 cameras.txt
 media/**
+__pycache__
