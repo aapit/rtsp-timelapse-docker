@@ -2,7 +2,7 @@ services:
   app:
     container_name: timelapse-app
     image: aapit/rtsp-timelapse
-    restart: always
+    restart: no
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - /etc/timezone:/etc/timezone:ro
